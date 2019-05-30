@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My New Hugo Site</title>
+    <link>https://githublss.github.io/</link>
+    <description>Recent content on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 29 May 2019 21:41:51 +0800</lastBuildDate>
+    
+	<atom:link href="https://githublss.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Taday</title>
+      <link>https://githublss.github.io/post/taday/</link>
+      <pubDate>Wed, 29 May 2019 21:41:51 +0800</pubDate>
+      
+      <guid>https://githublss.github.io/post/taday/</guid>
+      <description>Jump Game Given an array of non-negative integers, you are initially positioned at the first index of the array.
+Each element in the array represents your maximum jump length at that position.
+Determine if you are able to reach the last index.
+Example 1:
+ Input: [2,3,1,1,4] Output: true Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
+ Example 2:
+ Input: [3,2,1,0,4] Output: false Explanation: You will always arrive at index 3 no matter what.</description>
+    </item>
+    
+    <item>
+      <title>Jump Game II</title>
+      <link>https://githublss.github.io/post/blog/</link>
+      <pubDate>Wed, 29 May 2019 21:07:01 +0800</pubDate>
+      
+      <guid>https://githublss.github.io/post/blog/</guid>
+      <description>Jump Game II  Given an array of non-negative integers, you are initially positioned at the first index of the array. Each element in the array represents your maximum jump length at that position. Your goal is to reach the last index in the minimum number of jumps.  Example:
+Input: [2,3,1,1,4] Output: 2  Explanation: The minimum number of jumps to reach the last index is 2. Jump 1 step from index 0 to 1, then 3 steps to the last index.</description>
+    </item>
+    
+  </channel>
+</rss>
