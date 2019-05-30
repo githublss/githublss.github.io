@@ -5,19 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    
-    
-    
+    <meta name="author" content="John Doe">
+    <meta name="description" content="John Doe&#39;s personal website">
+    <meta name="keywords" content="blog,developer,personal">
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Jump Game II"/>
-<meta name="twitter:description" content="Jump Game II  Given an array of non-negative integers, you are initially positioned at the first index of the array. Each element in the array represents your maximum jump length at that position. Your goal is to reach the last index in the minimum number of jumps.  Example:
-Input: [2,3,1,1,4] Output: 2  Explanation: The minimum number of jumps to reach the last index is 2. Jump 1 step from index 0 to 1, then 3 steps to the last index."/>
-<meta name="twitter:site" content="@*"/>
+<meta name="twitter:description" content="Jump Game II Given an array of non-negative integers, you are initially positioned at the first index of the array. Each element in the array represents your maximum jump length at that position. Your goal is to reach the last index in the minimum number of jumps. Example:
+Input: [2,3,1,1,4] Output: 2 Explanation: The minimum number of jumps to reach the last index is 2. Jump 1 step from index 0 to 1, then 3 steps to the last index."/>
 
     <meta property="og:title" content="Jump Game II" />
-<meta property="og:description" content="Jump Game II  Given an array of non-negative integers, you are initially positioned at the first index of the array. Each element in the array represents your maximum jump length at that position. Your goal is to reach the last index in the minimum number of jumps.  Example:
-Input: [2,3,1,1,4] Output: 2  Explanation: The minimum number of jumps to reach the last index is 2. Jump 1 step from index 0 to 1, then 3 steps to the last index." />
+<meta property="og:description" content="Jump Game II Given an array of non-negative integers, you are initially positioned at the first index of the array. Each element in the array represents your maximum jump length at that position. Your goal is to reach the last index in the minimum number of jumps. Example:
+Input: [2,3,1,1,4] Output: 2 Explanation: The minimum number of jumps to reach the last index is 2. Jump 1 step from index 0 to 1, then 3 steps to the last index." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://githublss.github.io/post/blog/" />
 <meta property="article:published_time" content="2019-05-29T21:07:01&#43;08:00"/>
@@ -50,11 +49,7 @@ Input: [2,3,1,1,4] Output: 2  Explanation: The minimum number of jumps to reach 
     
 
     
-      <link rel="stylesheet" href="https://githublss.github.io/css/my.css" />
-    
 
-    
-      <script src="https://githublss.github.io/js/my.js"></script>
     
     
     <link rel="icon" type="image/png" href="https://githublss.github.io/images/favicon-32x32.png" sizes="32x32">
@@ -76,22 +71,40 @@ Input: [2,3,1,1,4] Output: 2  Explanation: The minimum number of jumps to reach 
       
         
           <li class="navigation-item">
-            <a class="navigation-link" href="https://githublss.github.io/">Home</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://githublss.github.io/post/">Posts</a>
-          </li>
-        
-          <li class="navigation-item">
             <a class="navigation-link" href="https://githublss.github.io/about/">About</a>
           </li>
         
           <li class="navigation-item">
-            <a class="navigation-link" href="https://githublss.github.io/contact/">Contact</a>
+            <a class="navigation-link" href="https://githublss.github.io/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://githublss.github.io/projects/">Projects</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://githublss.github.io/contact/">Contact me</a>
           </li>
         
       
+      
+        
+        
+        
+          
+            
+              <li class="navigation-item menu-separator">
+                <span>|</span>
+              </li>
+              
+            
+            <li class="navigation-item">
+              <a href="https://githublss.github.io/pt-br/">Português</a>
+            </li>
+          
+        
+          
+        
       
     </ul>
   </section>
@@ -109,20 +122,14 @@ Input: [2,3,1,1,4] Output: 2  Explanation: The minimum number of jumps to reach 
     
 
 <h1 id="jump-game-ii">Jump Game II</h1>
-
-<pre><code>    Given an array of non-negative integers, you are initially positioned at the first index of the array.
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">    Given an array of non-negative integers, you are initially positioned at the first index of the array.
 
     Each element in the array represents your maximum jump length at that position.
 
-    Your goal is to reach the last index in the minimum number of jumps.
-</code></pre>
-
+    Your goal is to reach the last index in the minimum number of jumps.</pre></div>
 <p>Example:</p>
-
-<pre><code>Input: [2,3,1,1,4]
-Output: 2
-</code></pre>
-
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Input: [2,3,1,1,4]
+Output: 2</pre></div>
 <p>Explanation: The minimum number of jumps to reach the last index is 2.
     Jump 1 step from index 0 to 1, then 3 steps to the last index.
 Note:</p>
@@ -131,29 +138,26 @@ Note:</p>
 
 <p><strong>Solution</strong>:此题与jupmGame I有些许相似，但是这个题目是要求得出到达终点的最小值，就是说一定可以到达终点，同样是用贪心的方法。
 通过max(nextLoca, nums[i]+i)来得到最远可以到达的位置。curent用来记录当前可以到达的最远位置，nextLoca用来记录下次可以到达的最远位置。更新步数，将最大的<strong>nextLoca</strong>赋值给<strong>curent</strong>。重复进行操作，直到到达中点位置。</p>
-
-<pre><code class="language-python">class Solution(object):
-    def jump(self, nums):
-        &quot;&quot;&quot;
-        :type nums: List[int]
-        :rtype: int
-        &quot;&quot;&quot;
-        numsLen = len(nums)
-        step = 0        # 记录步数
-        curent = 0      # 记录当前可以到达的位置
-        nextLoca = 0    # 记录当前位置前面可以到达的最远位置
-        i = 0           # 记录遍历索引值
-        while(i&lt;numsLen):
-            if curent &gt;= numsLen-1:
-                break
-            while i&lt;=curent:
-                nextLoca = max(nextLoca,nums[i]+i)
-                i += 1
-            step += 1
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fff;font-weight:bold">class</span> Solution(<span style="color:#fff;font-weight:bold">object</span>):
+    <span style="color:#fff;font-weight:bold">def</span> jump(self, nums):
+        <span style="color:#0ff;font-weight:bold">&#34;&#34;&#34;
+</span><span style="color:#0ff;font-weight:bold">        :type nums: List[int]
+</span><span style="color:#0ff;font-weight:bold">        :rtype: int
+</span><span style="color:#0ff;font-weight:bold">        &#34;&#34;&#34;</span>
+        numsLen = <span style="color:#fff;font-weight:bold">len</span>(nums)
+        step = <span style="color:#ff0;font-weight:bold">0</span>        <span style="color:#007f7f"># 记录步数</span>
+        curent = <span style="color:#ff0;font-weight:bold">0</span>      <span style="color:#007f7f"># 记录当前可以到达的位置</span>
+        nextLoca = <span style="color:#ff0;font-weight:bold">0</span>    <span style="color:#007f7f"># 记录当前位置前面可以到达的最远位置</span>
+        i = <span style="color:#ff0;font-weight:bold">0</span>           <span style="color:#007f7f"># 记录遍历索引值</span>
+        <span style="color:#fff;font-weight:bold">while</span>(i&lt;numsLen):
+            <span style="color:#fff;font-weight:bold">if</span> curent &gt;= numsLen-<span style="color:#ff0;font-weight:bold">1</span>:
+                <span style="color:#fff;font-weight:bold">break</span>
+            <span style="color:#fff;font-weight:bold">while</span> i&lt;=curent:
+                nextLoca = <span style="color:#fff;font-weight:bold">max</span>(nextLoca,nums[i]+i)
+                i += <span style="color:#ff0;font-weight:bold">1</span>
+            step += <span style="color:#ff0;font-weight:bold">1</span>
             curent = nextLoca
-        return step
-</code></pre>
-
+        <span style="color:#fff;font-weight:bold">return</span> step</code></pre></div>
   </article>
 </section>
 
@@ -163,11 +167,16 @@ Note:</p>
       <footer class="footer">
   <section class="container">
     
+      <p>Enter a text here.</p>
+    
      © 2019
     
        · 
       Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
     
+    
+       · 
+      [<a href="https://github.com/luizdepra/hugo-coder/tree/"></a>]
     
   </section>
 </footer>
