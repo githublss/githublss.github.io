@@ -7,16 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title> | 昨夜星辰的博客</title>
-    <meta property="og:title" content=" - 昨夜星辰的博客">
+    <title>About | 昨夜星辰的博客</title>
+    <meta property="og:title" content="About - 昨夜星辰的博客">
     <meta property="og:type" content="article">
         
+    <meta property="article:published_time" content="2019-11-27T21:52:30&#43;08:00">
+        
+        
+    <meta property="article:modified_time" content="2019-11-27T21:52:30&#43;08:00">
         
     <meta name="Keywords" content="blog,developer,personal">
-    <meta name="description" content="">
+    <meta name="description" content="About">
         
     <meta name="author" content="">
-    <meta property="og:url" content="https://githublss.github.io/post/merge-sorted-array/">
+    <meta property="og:url" content="https://githublss.github.io/about/">
     <link rel="shortcut icon" href="https://githublss.github.io/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="https://githublss.github.io/css/normalize.css">
@@ -47,11 +51,11 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="https://githublss.github.io">首页</a>
+                    <a class="" href="https://githublss.github.io">首页</a>
                     
                     <a  href="https://githublss.github.io/archives/" title="归档">归档</a>
                     
-                    <a  href="https://githublss.github.io/about/" title="关于">关于</a>
+                    <a class="current" href="https://githublss.github.io/about/" title="关于">关于</a>
                     
                 </nav>
             </div>
@@ -70,53 +74,16 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title"></h1>
+                            <h1 class="post-title">About</h1>
                         </header>
                         <date class="post-meta meta-date">
-                            1年1月1日
+                            2019年11月27日
                         </date>
                         
                         
                         
                         <div class="post-content">
                             
-
-<h1 id="merge-sorted-array">Merge Sorted Array</h1>
-
-<p>Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.</p>
-
-<p><strong>Note:</strong></p>
-
-<p>The number of elements initialized in nums1 and nums2 are m and n respectively.
-You may assume that nums1 has enough space (size that is greater or equal to m + n) to hold additional elements from nums2.
-Example:</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Input:
-nums1 = [1,2,3,0,0,0], m = 3
-nums2 = [2,5,6],       n = 3
-
-Output: [1,2,2,3,5,6]</pre></div>
-<p><strong>题意</strong>：将两个顺序排列的数组进行合并，假设nums1中可以容纳下来自于nums2的元素，最后nums1中为合并的结果。<br />
-<strong>方法</strong>：以前的办法是从nums1和nums2中从头到尾一个一个的取出元素进行比较，放到一个新的元素中，但是这里是要将数组2中的元素放到数组1中，不能从头进行操作。但是可以使用m和n作为指示哨兵，每一次将哨兵脚下比较大的数放到数组1的从后往前铺路的哨兵i的脚下。</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#fff;font-weight:bold">class</span><span style="color:#f00"> </span>Solution {
-<span style="color:#fff;font-weight:bold">public</span>:
-    <span style="color:#fff;font-weight:bold">void</span> merge(vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt;&amp; nums1, <span style="color:#fff;font-weight:bold">int</span> m, vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt;&amp; nums2, <span style="color:#fff;font-weight:bold">int</span> n) {
-        m--;
-        n--;
-        <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=m+n+<span style="color:#ff0;font-weight:bold">1</span>;i&gt;=<span style="color:#ff0;font-weight:bold">0</span>;i--){
-            <span style="color:#fff;font-weight:bold">if</span>(m&gt;=<span style="color:#ff0;font-weight:bold">0</span> &amp;&amp; n&gt;=<span style="color:#ff0;font-weight:bold">0</span>){
-                nums1[m] &gt; nums2[n] ? nums1[i] = nums1[m--] : nums1[i]=nums2[n--];
-                <span style="color:#fff;font-weight:bold">continue</span>;
-            }
-            <span style="color:#fff;font-weight:bold">if</span>(n&gt;=<span style="color:#ff0;font-weight:bold">0</span> &amp;&amp; m&lt;<span style="color:#ff0;font-weight:bold">0</span>){
-                <span style="color:#fff;font-weight:bold">while</span>(n&gt;=<span style="color:#ff0;font-weight:bold">0</span>){
-                    nums1[i--] = nums2[n--];
-                }
-            <span style="color:#fff;font-weight:bold">break</span>;
-            }
-        }
-    }
-};
-</code></pre></div>
                         </div>
 
                         
@@ -128,15 +95,15 @@ Output: [1,2,2,3,5,6]</pre></div>
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="https://githublss.github.io/about/">About</a></li>
-        
         <li><a href="https://githublss.github.io/post/taday/">Taday</a></li>
         
         <li><a href="https://githublss.github.io/post/blog/">Jump Game II</a></li>
         
-        <li><a href="https://githublss.github.io/post/plus-one/"></a></li>
+        <li><a href="https://githublss.github.io/post/binary-search/"></a></li>
         
-        <li><a href="https://githublss.github.io/post/pascals-triangle/"></a></li>
+        <li><a href="https://githublss.github.io/post/merge-sorted-array/"></a></li>
+        
+        <li><a href="https://githublss.github.io/post/sort-an-array/"></a></li>
         
     </ul>
 </div>
