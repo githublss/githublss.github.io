@@ -1,16 +1,92 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-	
-	<sitemap>
-	   	<loc>https://githublss.github.io/en/sitemap.xml</loc>
-		
-	   	<lastmod>2019-05-29T21:41:51+08:00</lastmod>
-		
-	</sitemap>
-	
-	<sitemap>
-	   	<loc>https://githublss.github.io/pt-br/sitemap.xml</loc>
-		
-	</sitemap>
-	
-</sitemapindex>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://githublss.github.io/post/</loc>
+    <lastmod>2019-05-29T21:41:51+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://githublss.github.io/post/taday/</loc>
+    <lastmod>2019-05-29T21:41:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://githublss.github.io/</loc>
+    <lastmod>2019-05-29T21:41:51+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://githublss.github.io/post/blog/</loc>
+    <lastmod>2019-05-29T21:07:01+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://githublss.github.io/archives/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://githublss.github.io/post/binary-search/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://githublss.github.io/post/merge-sorted-array/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://githublss.github.io/post/pascals-triangle-ii/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://githublss.github.io/post/pascals-triangle/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://githublss.github.io/post/plus-one/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://githublss.github.io/post/remove-duplicates-from-sorted-array-ii/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://githublss.github.io/post/remove-duplicates-from-sorted-array/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://githublss.github.io/post/remove-element/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://githublss.github.io/post/sort-an-array/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://githublss.github.io/post/two-sum/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://githublss.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://githublss.github.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

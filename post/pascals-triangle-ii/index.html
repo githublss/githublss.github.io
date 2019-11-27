@@ -7,20 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Jump Game II | 昨夜星辰的博客</title>
-    <meta property="og:title" content="Jump Game II - 昨夜星辰的博客">
+    <title> | 昨夜星辰的博客</title>
+    <meta property="og:title" content=" - 昨夜星辰的博客">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-05-29T21:07:01&#43;08:00">
-        
-        
-    <meta property="article:modified_time" content="2019-05-29T21:07:01&#43;08:00">
         
     <meta name="Keywords" content="blog,developer,personal">
-    <meta name="description" content="Jump Game II">
+    <meta name="description" content="">
         
     <meta name="author" content="">
-    <meta property="og:url" content="https://githublss.github.io/post/blog/">
+    <meta property="og:url" content="https://githublss.github.io/post/pascals-triangle-ii/">
     <link rel="shortcut icon" href="https://githublss.github.io/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="https://githublss.github.io/css/normalize.css">
@@ -74,10 +70,10 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">Jump Game II</h1>
+                            <h1 class="post-title"></h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019年5月29日
+                            1年1月1日
                         </date>
                         
                         
@@ -85,43 +81,39 @@
                         <div class="post-content">
                             
 
-<h1 id="jump-game-ii">Jump Game II</h1>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">    Given an array of non-negative integers, you are initially positioned at the first index of the array.
+<h1 id="pascal-s-triangle-ii">Pascal&rsquo;s Triangle II</h1>
 
-    Each element in the array represents your maximum jump length at that position.
+<p>Given a non-negative index k where k ≤ 33, return the kth index row of the Pascal&rsquo;s triangle.</p>
 
-    Your goal is to reach the last index in the minimum number of jumps.</pre></div>
-<p>Example:</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Input: [2,3,1,1,4]
-Output: 2</pre></div>
-<p>Explanation: The minimum number of jumps to reach the last index is 2.
-    Jump 1 step from index 0 to 1, then 3 steps to the last index.
-Note:</p>
+<p>Note that the row index starts from 0.</p>
 
-<p>You can assume that you can always reach the last index.</p>
+<p>In Pascal&rsquo;s triangle, each number is the sum of the two numbers directly above it.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Example:
 
-<p><strong>Solution</strong>:此题与jupmGame I有些许相似，但是这个题目是要求得出到达终点的最小值，就是说一定可以到达终点，同样是用贪心的方法。
-通过max(nextLoca, nums[i]+i)来得到最远可以到达的位置。curent用来记录当前可以到达的最远位置，nextLoca用来记录下次可以到达的最远位置。更新步数，将最大的<strong>nextLoca</strong>赋值给<strong>curent</strong>。重复进行操作，直到到达中点位置。</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fff;font-weight:bold">class</span> Solution(<span style="color:#fff;font-weight:bold">object</span>):
-    <span style="color:#fff;font-weight:bold">def</span> jump(self, nums):
-        <span style="color:#0ff;font-weight:bold">&#34;&#34;&#34;
-</span><span style="color:#0ff;font-weight:bold">        :type nums: List[int]
-</span><span style="color:#0ff;font-weight:bold">        :rtype: int
-</span><span style="color:#0ff;font-weight:bold">        &#34;&#34;&#34;</span>
-        numsLen = <span style="color:#fff;font-weight:bold">len</span>(nums)
-        step = <span style="color:#ff0;font-weight:bold">0</span>        <span style="color:#007f7f"># 记录步数</span>
-        curent = <span style="color:#ff0;font-weight:bold">0</span>      <span style="color:#007f7f"># 记录当前可以到达的位置</span>
-        nextLoca = <span style="color:#ff0;font-weight:bold">0</span>    <span style="color:#007f7f"># 记录当前位置前面可以到达的最远位置</span>
-        i = <span style="color:#ff0;font-weight:bold">0</span>           <span style="color:#007f7f"># 记录遍历索引值</span>
-        <span style="color:#fff;font-weight:bold">while</span>(i&lt;numsLen):
-            <span style="color:#fff;font-weight:bold">if</span> curent &gt;= numsLen-<span style="color:#ff0;font-weight:bold">1</span>:
-                <span style="color:#fff;font-weight:bold">break</span>
-            <span style="color:#fff;font-weight:bold">while</span> i&lt;=curent:
-                nextLoca = <span style="color:#fff;font-weight:bold">max</span>(nextLoca,nums[i]+i)
-                i += <span style="color:#ff0;font-weight:bold">1</span>
-            step += <span style="color:#ff0;font-weight:bold">1</span>
-            curent = nextLoca
-        <span style="color:#fff;font-weight:bold">return</span> step</code></pre></div>
+Input: 3
+Output: [1,3,3,1]</pre></div>
+<p><strong>Follow up:</strong></p>
+
+<p>Could you optimize your algorithm to use only O(k) extra space?
+题意：此题与上一道生成三角形的题目的题意是类似的。但是这里只有能使用一个数组，而不能像之前一样来生成一个二维的数组
+办法：由于要在一个数组上来进行操作，假如得出了第3层的数据，在计算第四层数据的时候：result[1]=result[0]+result[1],后面在计算result[2]=result[1]+result[2]的时候，result[1]已经被覆盖。
+但是可以先计算出result[3]=result[3]+result[2],后面再计算result[2]=result[2]+result[1]的时候并不会影响对result[2]的计算，这样从后往前来计算。
+<img src="https://raw.githubusercontent.com/githublss/image/master/image/20191101171941.png" alt="推导过程" /></p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#fff;font-weight:bold">class</span><span style="color:#f00"> </span>Solution {
+<span style="color:#fff;font-weight:bold">public</span>:
+    vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; getRow(<span style="color:#fff;font-weight:bold">int</span> rowIndex) {
+        vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; result(rowIndex+<span style="color:#ff0;font-weight:bold">1</span>, <span style="color:#ff0;font-weight:bold">1</span>);  <span style="color:#007f7f">//对数组进行初始化
+</span><span style="color:#007f7f"></span>        <span style="color:#fff;font-weight:bold">if</span>(rowIndex==<span style="color:#ff0;font-weight:bold">0</span>||rowIndex==<span style="color:#ff0;font-weight:bold">1</span>)
+            <span style="color:#fff;font-weight:bold">return</span> result;
+        <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">2</span>;i&lt;=rowIndex;i++){
+            <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> j=i;j&gt;<span style="color:#ff0;font-weight:bold">1</span>;j--){
+                result[j-<span style="color:#ff0;font-weight:bold">1</span>] = result[j-<span style="color:#ff0;font-weight:bold">2</span>] + result[j-<span style="color:#ff0;font-weight:bold">1</span>];    <span style="color:#007f7f">// 从后往前来对数组进行计算。
+</span><span style="color:#007f7f"></span>            }
+        }
+        <span style="color:#fff;font-weight:bold">return</span> result;
+    }
+};
+</code></pre></div>
                         </div>
 
                         
@@ -133,15 +125,15 @@ Note:</p>
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="https://githublss.github.io/post/binary-search/"></a></li>
+        <li><a href="https://githublss.github.io/post/taday/">Taday</a></li>
+        
+        <li><a href="https://githublss.github.io/post/blog/">Jump Game II</a></li>
+        
+        <li><a href="https://githublss.github.io/post/remove-duplicates-from-sorted-array/"></a></li>
+        
+        <li><a href="https://githublss.github.io/post/remove-element/"></a></li>
         
         <li><a href="https://githublss.github.io/post/sort-an-array/"></a></li>
-        
-        <li><a href="https://githublss.github.io/post/two-sum/"></a></li>
-        
-        <li><a href="https://githublss.github.io/post/pascals-triangle-ii/"></a></li>
-        
-        <li><a href="https://githublss.github.io/archives/"></a></li>
         
     </ul>
 </div>

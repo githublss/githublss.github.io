@@ -7,20 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Jump Game II | 昨夜星辰的博客</title>
-    <meta property="og:title" content="Jump Game II - 昨夜星辰的博客">
+    <title> | 昨夜星辰的博客</title>
+    <meta property="og:title" content=" - 昨夜星辰的博客">
     <meta property="og:type" content="article">
         
-    <meta property="article:published_time" content="2019-05-29T21:07:01&#43;08:00">
-        
-        
-    <meta property="article:modified_time" content="2019-05-29T21:07:01&#43;08:00">
         
     <meta name="Keywords" content="blog,developer,personal">
-    <meta name="description" content="Jump Game II">
+    <meta name="description" content="">
         
     <meta name="author" content="">
-    <meta property="og:url" content="https://githublss.github.io/post/blog/">
+    <meta property="og:url" content="https://githublss.github.io/post/binary-search/">
     <link rel="shortcut icon" href="https://githublss.github.io/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="https://githublss.github.io/css/normalize.css">
@@ -74,10 +70,10 @@
                 <div class="res-cons">
                     <article class="post">
                         <header>
-                            <h1 class="post-title">Jump Game II</h1>
+                            <h1 class="post-title"></h1>
                         </header>
                         <date class="post-meta meta-date">
-                            2019年5月29日
+                            1年1月1日
                         </date>
                         
                         
@@ -85,43 +81,47 @@
                         <div class="post-content">
                             
 
-<h1 id="jump-game-ii">Jump Game II</h1>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">    Given an array of non-negative integers, you are initially positioned at the first index of the array.
+<h1 id="binary-search">Binary Search</h1>
 
-    Each element in the array represents your maximum jump length at that position.
+<blockquote>
+<p>Given a sorted (in ascending order) integer array nums of n elements and a target value, write a function to search target in nums. If target exists, then return its index, otherwise return -1.</p>
+</blockquote>
 
-    Your goal is to reach the last index in the minimum number of jumps.</pre></div>
-<p>Example:</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Input: [2,3,1,1,4]
-Output: 2</pre></div>
-<p>Explanation: The minimum number of jumps to reach the last index is 2.
-    Jump 1 step from index 0 to 1, then 3 steps to the last index.
-Note:</p>
+<p>Example 1:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Input: nums = [-1,0,3,5,9,12], target = 9
+Output: 4
+Explanation: 9 exists in nums and its index is 4</pre></div>
+<p>Example 2:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Input: nums = [-1,0,3,5,9,12], target = 2
+Output: -1
+Explanation: 2 does not exist in nums so return -1</pre></div>
+<p>Note:</p>
 
-<p>You can assume that you can always reach the last index.</p>
+<p>You may assume that all elements in nums are unique.
+n will be in the range [1, 10000].
+The value of each element in nums will be in the range [-9999, 9999].<br />
+题意：使用二分查找查找给定的元素<br />
+方法：使用折半查找的方法来查找目标值。</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#fff;font-weight:bold">class</span><span style="color:#f00"> </span>Solution {
+<span style="color:#fff;font-weight:bold">public</span>:
+    <span style="color:#fff;font-weight:bold">int</span> search(vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt;&amp; nums, <span style="color:#fff;font-weight:bold">int</span> target) {
+        <span style="color:#fff;font-weight:bold">int</span> low = <span style="color:#ff0;font-weight:bold">0</span>,heigh = nums.size()-<span style="color:#ff0;font-weight:bold">1</span>;
+        <span style="color:#fff;font-weight:bold">while</span>(low &lt;= heigh){
+            <span style="color:#fff;font-weight:bold">int</span> mid = (low+heigh)/<span style="color:#ff0;font-weight:bold">2</span>;
+            <span style="color:#fff;font-weight:bold">if</span>(nums[mid] &gt; target)
+                heigh = mid - <span style="color:#ff0;font-weight:bold">1</span>;
+            <span style="color:#fff;font-weight:bold">if</span>(nums[mid] &lt; target)
+                low = mid + <span style="color:#ff0;font-weight:bold">1</span>;
+            <span style="color:#fff;font-weight:bold">if</span>(nums[mid] == target)
+                <span style="color:#fff;font-weight:bold">return</span> mid;
+        }
+        <span style="color:#fff;font-weight:bold">return</span> -<span style="color:#ff0;font-weight:bold">1</span>;
+    }
+};
+</code></pre></div>
+<p>参考：<a href="https://www.cnblogs.com/ider/archive/2012/04/01/binary_search.html">二分查找扩展</a><br />
+扩展：二分查找不仅可以用来进行查找目标值，还可以用来1）<strong>查找上届和下届，</strong>2）<strong>找寻区域，</strong>3）<strong>在轮转后有序的数组上使用二分查找</strong>。</p>
 
-<p><strong>Solution</strong>:此题与jupmGame I有些许相似，但是这个题目是要求得出到达终点的最小值，就是说一定可以到达终点，同样是用贪心的方法。
-通过max(nextLoca, nums[i]+i)来得到最远可以到达的位置。curent用来记录当前可以到达的最远位置，nextLoca用来记录下次可以到达的最远位置。更新步数，将最大的<strong>nextLoca</strong>赋值给<strong>curent</strong>。重复进行操作，直到到达中点位置。</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fff;font-weight:bold">class</span> Solution(<span style="color:#fff;font-weight:bold">object</span>):
-    <span style="color:#fff;font-weight:bold">def</span> jump(self, nums):
-        <span style="color:#0ff;font-weight:bold">&#34;&#34;&#34;
-</span><span style="color:#0ff;font-weight:bold">        :type nums: List[int]
-</span><span style="color:#0ff;font-weight:bold">        :rtype: int
-</span><span style="color:#0ff;font-weight:bold">        &#34;&#34;&#34;</span>
-        numsLen = <span style="color:#fff;font-weight:bold">len</span>(nums)
-        step = <span style="color:#ff0;font-weight:bold">0</span>        <span style="color:#007f7f"># 记录步数</span>
-        curent = <span style="color:#ff0;font-weight:bold">0</span>      <span style="color:#007f7f"># 记录当前可以到达的位置</span>
-        nextLoca = <span style="color:#ff0;font-weight:bold">0</span>    <span style="color:#007f7f"># 记录当前位置前面可以到达的最远位置</span>
-        i = <span style="color:#ff0;font-weight:bold">0</span>           <span style="color:#007f7f"># 记录遍历索引值</span>
-        <span style="color:#fff;font-weight:bold">while</span>(i&lt;numsLen):
-            <span style="color:#fff;font-weight:bold">if</span> curent &gt;= numsLen-<span style="color:#ff0;font-weight:bold">1</span>:
-                <span style="color:#fff;font-weight:bold">break</span>
-            <span style="color:#fff;font-weight:bold">while</span> i&lt;=curent:
-                nextLoca = <span style="color:#fff;font-weight:bold">max</span>(nextLoca,nums[i]+i)
-                i += <span style="color:#ff0;font-weight:bold">1</span>
-            step += <span style="color:#ff0;font-weight:bold">1</span>
-            curent = nextLoca
-        <span style="color:#fff;font-weight:bold">return</span> step</code></pre></div>
                         </div>
 
                         
@@ -133,15 +133,15 @@ Note:</p>
     <h2>See Also</h2>
     <ul class="listing">
         
-        <li><a href="https://githublss.github.io/post/binary-search/"></a></li>
+        <li><a href="https://githublss.github.io/post/taday/">Taday</a></li>
         
-        <li><a href="https://githublss.github.io/post/sort-an-array/"></a></li>
+        <li><a href="https://githublss.github.io/post/blog/">Jump Game II</a></li>
+        
+        <li><a href="https://githublss.github.io/post/plus-one/"></a></li>
         
         <li><a href="https://githublss.github.io/post/two-sum/"></a></li>
         
-        <li><a href="https://githublss.github.io/post/pascals-triangle-ii/"></a></li>
-        
-        <li><a href="https://githublss.github.io/archives/"></a></li>
+        <li><a href="https://githublss.github.io/post/remove-duplicates-from-sorted-array-ii/"></a></li>
         
     </ul>
 </div>

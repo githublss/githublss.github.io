@@ -1,135 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh-CN">
+<head>
 
-  <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="author" content="LiSaiSai">
-    <meta name="description" content="LiSaiSai&#39;s personal website">
-    <meta name="keywords" content="blog,developer,personal">
-
-    <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Taday"/>
-<meta name="twitter:description" content="Jump Game Given an array of non-negative integers, you are initially positioned at the first index of the array.
-Each element in the array represents your maximum jump length at that position.
-Determine if you are able to reach the last index.
-Example 1:
- Input: [2,3,1,1,4] Output: true Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
- Example 2:
- Input: [3,2,1,0,4] Output: false Explanation: You will always arrive at index 3 no matter what."/>
-
-    <meta property="og:title" content="Taday" />
-<meta property="og:description" content="Jump Game Given an array of non-negative integers, you are initially positioned at the first index of the array.
-Each element in the array represents your maximum jump length at that position.
-Determine if you are able to reach the last index.
-Example 1:
- Input: [2,3,1,1,4] Output: true Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
- Example 2:
- Input: [3,2,1,0,4] Output: false Explanation: You will always arrive at index 3 no matter what." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://githublss.github.io/post/taday/" />
-<meta property="article:published_time" content="2019-05-29T21:41:51&#43;08:00"/>
-<meta property="article:modified_time" content="2019-05-29T21:41:51&#43;08:00"/>
-
-
-    
-      <base href="https://githublss.github.io/post/taday/">
-    
-    <title>
-  Taday · My New Site
-</title>
-
-    
-      <link rel="canonical" href="https://githublss.github.io/post/taday/">
-    
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
-
-    
-      
-      
-      <link rel="stylesheet" href="https://githublss.github.io/css/coder.min.28d751104f30c16da1aa1bb04015cbe662cacfe0d1b01af4f2240ad58580069c.css" integrity="sha256-KNdREE8wwW2hqhuwQBXL5mLKz&#43;DRsBr08iQK1YWABpw=" crossorigin="anonymous" media="screen" />
-    
-
-    
-
-    
-
-    
-
-    
-    
-    <link rel="icon" type="image/png" href="https://githublss.github.io/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://githublss.github.io/images/favicon-16x16.png" sizes="16x16">
-
     <meta name="generator" content="Hugo 0.55.6" />
-  </head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <body class=" ">
-    <main class="wrapper">
-      <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="https://githublss.github.io">
-      My New Site
-    </a>
-    <input type="checkbox" id="menu-toggle" />
-    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
-    <ul class="navigation-list">
-      
+    <title>Taday | 昨夜星辰的博客</title>
+    <meta property="og:title" content="Taday - 昨夜星辰的博客">
+    <meta property="og:type" content="article">
         
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://githublss.github.io/about/">About</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://githublss.github.io/post/">Blog</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://githublss.github.io/projects/">Projects</a>
-          </li>
-        
-          <li class="navigation-item">
-            <a class="navigation-link" href="https://githublss.github.io/contact/">Contact me</a>
-          </li>
-        
-      
-      
+    <meta property="article:published_time" content="2019-05-29T21:41:51&#43;08:00">
         
         
+    <meta property="article:modified_time" content="2019-05-29T21:41:51&#43;08:00">
         
-          
+    <meta name="Keywords" content="blog,developer,personal">
+    <meta name="description" content="Taday">
         
-          
-            
-              <li class="navigation-item menu-separator">
-                <span>|</span>
-              </li>
-              
-            
-            <li class="navigation-item">
-              <a href="https://githublss.github.io/pt-br/">中文</a>
-            </li>
-          
-        
-      
-    </ul>
-  </section>
-</nav>
+    <meta name="author" content="">
+    <meta property="og:url" content="https://githublss.github.io/post/taday/">
+    <link rel="shortcut icon" href="https://githublss.github.io/favicon.ico" type="image/x-icon">
 
-
-      <div class="content">
-        
-  <section class="container page">
-  <article>
-    <header>
-      <h1>Taday</h1>
-    </header>
+    <link rel="stylesheet" href="https://githublss.github.io/css/normalize.css">
+    
+        <link rel="stylesheet" href="https://githublss.github.io/css/prism.css">
+    
+    <link rel="stylesheet" href="https://githublss.github.io/css/style.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://githublss.github.io">
+                        昨夜星辰的博客
+                    </a>
+                
+                
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://githublss.github.io">首页</a>
+                    
+                    <a  href="https://githublss.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://githublss.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+        
+        
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">Taday</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            2019年5月29日
+                        </date>
+                        
+                        
+                        
+                        <div class="post-content">
+                            
 
 <h1 id="jump-game">Jump Game</h1>
 
@@ -195,33 +149,194 @@ Solution:使用贪心法来进行解决。当到下一步时，让可走的步�
         <span style="color:#fff;font-weight:bold">return</span> i == n
             </code></pre></div></blockquote>
 
-  </article>
-</section>
+                        </div>
+
+                        
 
 
-      </div>
+                        
 
-      <footer class="footer">
-  <section class="container">
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="https://githublss.github.io/post/blog/">Jump Game II</a></li>
+        
+        <li><a href="https://githublss.github.io/post/two-sum/"></a></li>
+        
+        <li><a href="https://githublss.github.io/post/pascals-triangle/"></a></li>
+        
+        <li><a href="https://githublss.github.io/post/plus-one/"></a></li>
+        
+        <li><a href="https://githublss.github.io/post/pascals-triangle-ii/"></a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            没有标签
+                            
+                        </div>
+                    </article>
+                    
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
     
-      <p>Enter a text here.</p>
-    
-     © 2019
-    
-       · 
-      Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
     
     
-       · 
-      [<a href="https://github.com/luizdepra/hugo-coder/tree/"></a>]
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "disqus_9yu0ehi2ml" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
     
-  </section>
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://githublss.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://githublss.github.io/post/taday/" title="Taday">Taday</a>
+    </li>
+    
+    <li>
+        <a href="https://githublss.github.io/post/blog/" title="Jump Game II">Jump Game II</a>
+    </li>
+    
+    <li>
+        <a href="https://githublss.github.io/post/binary-search/" title=""></a>
+    </li>
+    
+    <li>
+        <a href="https://githublss.github.io/post/merge-sorted-array/" title=""></a>
+    </li>
+    
+    <li>
+        <a href="https://githublss.github.io/post/pascals-triangle-ii/" title=""></a>
+    </li>
+    
+    <li>
+        <a href="https://githublss.github.io/post/pascals-triangle/" title=""></a>
+    </li>
+    
+    <li>
+        <a href="https://githublss.github.io/post/plus-one/" title=""></a>
+    </li>
+    
+    <li>
+        <a href="https://githublss.github.io/post/remove-duplicates-from-sorted-array-ii/" title=""></a>
+    </li>
+    
+    <li>
+        <a href="https://githublss.github.io/post/remove-duplicates-from-sorted-array/" title=""></a>
+    </li>
+    
+    <li>
+        <a href="https://githublss.github.io/post/remove-element/" title=""></a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+</div>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://githublss.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://githublss.github.io">昨夜星辰的博客 By </a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
 </footer>
 
-    </main>
 
     
+    <script type="text/javascript">
+        
+        (function () {
+            $("pre code").parent().addClass("line-numbers")
+        }());
 
-  </body>
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script type="text/javascript" src="https://githublss.github.io/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="https://githublss.github.io/js/totop.js?v=0.0.0" async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'GA ID', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+</body>
 </html>
