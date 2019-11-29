@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>基础算法 on 昨夜星辰的博客</title>
+    <link>https://githublss.github.io/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 基础算法 on 昨夜星辰的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 29 May 2019 21:41:51 +0800</lastBuildDate>
+    
+	<atom:link href="https://githublss.github.io/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>二分查找</title>
+      <link>https://githublss.github.io/post/Binary-Search/</link>
+      <pubDate>Wed, 29 May 2019 21:41:51 +0800</pubDate>
+      
+      <guid>https://githublss.github.io/post/Binary-Search/</guid>
+      <description>Binary Search  Given a sorted (in ascending order) integer array nums of n elements and a target value, write a function to search target in nums. If target exists, then return its index, otherwise return -1.
+ Example 1:
+Input: nums = [-1,0,3,5,9,12], target = 9 Output: 4 Explanation: 9 exists in nums and its index is 4  Example 2:
+Input: nums = [-1,0,3,5,9,12], target = 2 Output: -1 Explanation: 2 does not exist in nums so return -1  Note:</description>
+    </item>
+    
+  </channel>
+</rss>
