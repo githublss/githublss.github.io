@@ -14,7 +14,25 @@
   </url>
   
   <url>
+    <loc>https://githublss.github.io/series/Blog%E5%85%BB%E6%88%90%E8%AE%B0/</loc>
+    <lastmod>2019-05-29T21:41:51+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://githublss.github.io/categories/</loc>
+    <lastmod>2019-05-29T21:41:51+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://githublss.github.io/post/</loc>
+    <lastmod>2019-05-29T21:41:51+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://githublss.github.io/series/</loc>
     <lastmod>2019-05-29T21:41:51+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -22,6 +40,24 @@
   <url>
     <loc>https://githublss.github.io/post/taday/</loc>
     <lastmod>2019-05-29T21:41:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://githublss.github.io/tags/</loc>
+    <lastmod>2019-05-29T21:41:51+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://githublss.github.io/tags/hugo/</loc>
+    <lastmod>2019-05-29T21:41:51+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://githublss.github.io/categories/%E6%9D%82%E6%8A%80%E6%B5%85%E5%B0%9D/</loc>
+    <lastmod>2019-05-29T21:41:51+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -81,21 +117,6 @@
   
   <url>
     <loc>https://githublss.github.io/post/Two-Sum/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://githublss.github.io/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://githublss.github.io/series/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://githublss.github.io/tags/</loc>
     <priority>0</priority>
   </url>
   
