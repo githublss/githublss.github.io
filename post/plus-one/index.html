@@ -12,18 +12,18 @@
     <meta property="og:type" content="article">
         
         
-    <meta name="Keywords" content="blog,developer,personal">
+    <meta name="Keywords" content="">
     <meta name="description" content="">
         
     <meta name="author" content="">
-    <meta property="og:url" content="https://githublss.github.io/post/plus-one/">
-    <link rel="shortcut icon" href="https://githublss.github.io/favicon.ico" type="image/x-icon">
+    <meta property="og:url" content="https://githublss.github.io/post/Plus-One/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="https://githublss.github.io/css/normalize.css">
+    <link rel="stylesheet" href="/css/normalize.css">
     
-        <link rel="stylesheet" href="https://githublss.github.io/css/prism.css">
+        <link rel="stylesheet" href="/css/prism.css">
     
-    <link rel="stylesheet" href="https://githublss.github.io/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -43,7 +43,7 @@
                         昨夜星辰的博客
                     </a>
                 
-                
+                <p class="description">C&#43;&#43;、python、数据结构、算法、数据分析</p>
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
@@ -77,6 +77,10 @@
                         </date>
                         
                         
+                        <div class="post-meta">
+                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> 阅读</span></span>
+                        </div>
+                        
                         
                         <div class="post-content">
                             
@@ -87,7 +91,8 @@
 <p>Given a non-empty array of digits representing a non-negative integer, plus one to the integer.
 The digits are stored such that the most significant digit is at the head of the list, and each element in the array contain a single digit.
 You may assume the integer does not contain any leading zero, except the number 0 itself.</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Example 1:
+
+<pre><code>Example 1:
 
 Input: [1,2,3]
 Output: [1,2,4]
@@ -96,24 +101,28 @@ Example 2:
 
 Input: [4,3,2,1]
 Output: [4,3,2,2]
-Explanation: The array represents the integer 4321.</pre></div>
+Explanation: The array represents the integer 4321.
+</code></pre>
+
 <p>题意：给一个以数组形式存储的整数，现在对这个整数加上1，就是要考虑进位的问题。
 解决办法：考加法进位的问题。</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#fff;font-weight:bold">class</span><span style="color:#f00"> </span>Solution {
-<span style="color:#fff;font-weight:bold">public</span>:
-    vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; plusOne(vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt;&amp; digits) {
-        <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=digits.size()-<span style="color:#ff0;font-weight:bold">1</span>;i&gt;=<span style="color:#ff0;font-weight:bold">0</span>;i--){
-            <span style="color:#fff;font-weight:bold">if</span>((digits[i]=(digits[i]+<span style="color:#ff0;font-weight:bold">1</span>)%<span style="color:#ff0;font-weight:bold">10</span>)!=<span style="color:#ff0;font-weight:bold">0</span>){
-                <span style="color:#fff;font-weight:bold">break</span>;
+
+<pre><code class="language-C++">class Solution {
+public:
+    vector&lt;int&gt; plusOne(vector&lt;int&gt;&amp; digits) {
+        for(int i=digits.size()-1;i&gt;=0;i--){
+            if((digits[i]=(digits[i]+1)%10)!=0){
+                break;
             }
-            <span style="color:#fff;font-weight:bold">if</span>(digits[<span style="color:#ff0;font-weight:bold">0</span>]==<span style="color:#ff0;font-weight:bold">0</span>){
-                digits.insert(digits.begin(),<span style="color:#ff0;font-weight:bold">1</span>); <span style="color:#007f7f">//如果最后最高位也进位了，就在最高位前面插入一个1
-</span><span style="color:#007f7f"></span>            }
+            if(digits[0]==0){
+                digits.insert(digits.begin(),1); //如果最后最高位也进位了，就在最高位前面插入一个1
+            }
         }
-        <span style="color:#fff;font-weight:bold">return</span> digits;
+        return digits;
     }
 };
-</code></pre></div></blockquote>
+</code></pre>
+</blockquote>
 
                         </div>
 
@@ -121,23 +130,6 @@ Explanation: The array represents the integer 4321.</pre></div>
 
 
                         
-
-<div class="post-archive">
-    <h2>See Also</h2>
-    <ul class="listing">
-        
-        <li><a href="https://githublss.github.io/about/">About</a></li>
-        
-        <li><a href="https://githublss.github.io/post/taday/">Taday</a></li>
-        
-        <li><a href="https://githublss.github.io/post/blog/">Jump Game II</a></li>
-        
-        <li><a href="https://githublss.github.io/post/sort-an-array/"></a></li>
-        
-        <li><a href="https://githublss.github.io/post/merge-sorted-array/"></a></li>
-        
-    </ul>
-</div>
 
 
                         <div class="post-meta meta-tags">
@@ -186,35 +178,35 @@ Explanation: The array represents the integer 4321.</pre></div>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/binary-search/" title=""></a>
+        <a href="https://githublss.github.io/post/Binary-Search/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/merge-sorted-array/" title=""></a>
+        <a href="https://githublss.github.io/post/Merge-Sorted-Array/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/pascals-triangle-ii/" title=""></a>
+        <a href="https://githublss.github.io/post/Pascals-Triangle-II/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/pascals-triangle/" title=""></a>
+        <a href="https://githublss.github.io/post/Pascals-Triangle/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/plus-one/" title=""></a>
+        <a href="https://githublss.github.io/post/Plus-One/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/remove-duplicates-from-sorted-array-ii/" title=""></a>
+        <a href="https://githublss.github.io/post/Remove-Duplicates-from-Sorted-Array-II/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/remove-duplicates-from-sorted-array/" title=""></a>
+        <a href="https://githublss.github.io/post/Remove-Duplicates-from-Sorted-Array/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/remove-element/" title=""></a>
+        <a href="https://githublss.github.io/post/Remove-Element/" title=""></a>
     </li>
     
 </ul>
@@ -237,6 +229,21 @@ Explanation: The array represents the integer 4321.</pre></div>
     </section>
 
     
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://mirrors.tuna.tsinghua.edu.cn/" title="清华大学开源软件镜像站">清华大学开源软件镜像站</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="http://mirrors.flysnow.org/" title="常用开发工具CDN镜像">常用开发工具CDN镜像</a>
+        </li>
+        
+    </ul>
+</section>
+
 
     <section class="widget">
         <h3 class="widget-title">其它</h3>
@@ -272,12 +279,12 @@ Explanation: The array represents the integer 4321.</pre></div>
                 }
             };
     </script>
-    <script type="text/javascript" src="https://githublss.github.io/js/prism.js" async="true"></script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 
 <a id="rocket" href="#top"></a>
-<script type="text/javascript" src="https://githublss.github.io/js/totop.js?v=0.0.0" async=""></script>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -291,6 +298,8 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 
 
 

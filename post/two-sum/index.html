@@ -12,18 +12,18 @@
     <meta property="og:type" content="article">
         
         
-    <meta name="Keywords" content="blog,developer,personal">
+    <meta name="Keywords" content="">
     <meta name="description" content="">
         
     <meta name="author" content="">
-    <meta property="og:url" content="https://githublss.github.io/post/two-sum/">
-    <link rel="shortcut icon" href="https://githublss.github.io/favicon.ico" type="image/x-icon">
+    <meta property="og:url" content="https://githublss.github.io/post/Two-Sum/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="https://githublss.github.io/css/normalize.css">
+    <link rel="stylesheet" href="/css/normalize.css">
     
-        <link rel="stylesheet" href="https://githublss.github.io/css/prism.css">
+        <link rel="stylesheet" href="/css/prism.css">
     
-    <link rel="stylesheet" href="https://githublss.github.io/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -43,7 +43,7 @@
                         昨夜星辰的博客
                     </a>
                 
-                
+                <p class="description">C&#43;&#43;、python、数据结构、算法、数据分析</p>
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
@@ -77,6 +77,10 @@
                         </date>
                         
                         
+                        <div class="post-meta">
+                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> 阅读</span></span>
+                        </div>
+                        
                         
                         <div class="post-content">
                             
@@ -88,86 +92,77 @@
 
 <p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
 </blockquote>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Example:
+
+<pre><code>Example:
 
 Given nums = [2, 7, 11, 15], target = 9,
 
 Because nums[0] + nums[1] = 2 + 7 = 9,
-return [0, 1].</pre></div>
+return [0, 1].
+</code></pre>
+
 <p>solution:
 自己首先想到的是暴力法，参考人家的，人家是遍历一次的过程中建立一个字典，提高了查询速度</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fff;font-weight:bold">class</span> Solution(<span style="color:#fff;font-weight:bold">object</span>):
-    <span style="color:#fff;font-weight:bold">def</span> twoSum(self, nums, target):
-        <span style="color:#0ff;font-weight:bold">&#34;&#34;&#34;
-</span><span style="color:#0ff;font-weight:bold">        :type nums: List[int]
-</span><span style="color:#0ff;font-weight:bold">        :type target: int
-</span><span style="color:#0ff;font-weight:bold">        :rtype: List[int]
-</span><span style="color:#0ff;font-weight:bold">        &#34;&#34;&#34;</span>
-        <span style="color:#007f7f"># (1)暴力法</span>
-        <span style="color:#007f7f"># i=0</span>
-        <span style="color:#007f7f"># j=0</span>
-        <span style="color:#007f7f"># for i in range(len(nums)):</span>
-        <span style="color:#007f7f">#     for j in range(len(nums)-i-1):</span>
-        <span style="color:#007f7f">#         if (target==nums[i]+nums[i+j+1]):</span>
-        <span style="color:#007f7f">#             return [i,i+j+1]</span>
+
+<pre><code class="language-python">class Solution(object):
+    def twoSum(self, nums, target):
+        &quot;&quot;&quot;
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        &quot;&quot;&quot;
+        # (1)暴力法
+        # i=0
+        # j=0
+        # for i in range(len(nums)):
+        #     for j in range(len(nums)-i-1):
+        #         if (target==nums[i]+nums[i+j+1]):
+        #             return [i,i+j+1]
         
-        <span style="color:#007f7f"># (2)参考别人</span>
-        <span style="color:#fff;font-weight:bold">map</span>={}
-        <span style="color:#fff;font-weight:bold">for</span> i in <span style="color:#fff;font-weight:bold">range</span>(<span style="color:#fff;font-weight:bold">len</span>(nums)):
+        # (2)参考别人
+        map={}
+        for i in range(len(nums)):
             m = target - nums[i]
-            <span style="color:#fff;font-weight:bold">if</span> m in <span style="color:#fff;font-weight:bold">map</span>:
-                <span style="color:#fff;font-weight:bold">return</span> [<span style="color:#fff;font-weight:bold">map</span>[m],i]
-            <span style="color:#fff;font-weight:bold">else</span>:
-                <span style="color:#fff;font-weight:bold">map</span>[nums[i]] = i
-        <span style="color:#fff;font-weight:bold">return</span> []</code></pre></div>
+            if m in map:
+                return [map[m],i]
+            else:
+                map[nums[i]] = i
+        return []
+</code></pre>
+
 <p>使用C++模板库中的unordered_map&lt;&gt;建立一个哈希表，使得时间复杂度为O（n）。</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#fff;font-weight:bold">class</span><span style="color:#f00"> </span>Solution {
-<span style="color:#fff;font-weight:bold">public</span>:
-    vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; twoSum(vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt;&amp; nums, <span style="color:#fff;font-weight:bold">int</span> target) {
-        vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt; result;
-        <span style="color:#fff;font-weight:bold">if</span>(nums.size()&lt;=<span style="color:#ff0;font-weight:bold">1</span>)
-            <span style="color:#fff;font-weight:bold">return</span> result;
-        unordered_map&lt;<span style="color:#fff;font-weight:bold">int</span>,<span style="color:#fff;font-weight:bold">int</span>&gt; myMap;
-        <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">0</span>;i&lt;nums.size();i++){
+
+<pre><code class="language-C++">class Solution {
+public:
+    vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) {
+        vector&lt;int&gt; result;
+        if(nums.size()&lt;=1)
+            return result;
+        unordered_map&lt;int,int&gt; myMap;
+        for(int i=0;i&lt;nums.size();i++){
             myMap[nums[i]] = i;
         }
-        <span style="color:#fff;font-weight:bold">for</span>(<span style="color:#fff;font-weight:bold">int</span> i=<span style="color:#ff0;font-weight:bold">0</span>;i&lt;nums.size();i++){
-            <span style="color:#fff;font-weight:bold">int</span> another = target - nums[i];
-            <span style="color:#fff;font-weight:bold">if</span>(myMap.find(another) != myMap.end()){
-                <span style="color:#fff;font-weight:bold">if</span>(myMap[another] == i) <span style="color:#007f7f">// 为了防止出现某个数是target的两倍的情况
-</span><span style="color:#007f7f"></span>                    <span style="color:#fff;font-weight:bold">continue</span>;
+        for(int i=0;i&lt;nums.size();i++){
+            int another = target - nums[i];
+            if(myMap.find(another) != myMap.end()){
+                if(myMap[another] == i) // 为了防止出现某个数是target的两倍的情况
+                    continue;
                 result.push_back(i);
                 result.push_back(myMap[another]);
-                <span style="color:#fff;font-weight:bold">break</span>;
+                break;
             }
         }
-        <span style="color:#fff;font-weight:bold">return</span> result;
+        return result;
     }
 };
-</code></pre></div>
+</code></pre>
+
                         </div>
 
                         
 
 
                         
-
-<div class="post-archive">
-    <h2>See Also</h2>
-    <ul class="listing">
-        
-        <li><a href="https://githublss.github.io/about/">About</a></li>
-        
-        <li><a href="https://githublss.github.io/post/taday/">Taday</a></li>
-        
-        <li><a href="https://githublss.github.io/post/blog/">Jump Game II</a></li>
-        
-        <li><a href="https://githublss.github.io/archives/"></a></li>
-        
-        <li><a href="https://githublss.github.io/post/plus-one/"></a></li>
-        
-    </ul>
-</div>
 
 
                         <div class="post-meta meta-tags">
@@ -216,35 +211,35 @@ return [0, 1].</pre></div>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/binary-search/" title=""></a>
+        <a href="https://githublss.github.io/post/Binary-Search/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/merge-sorted-array/" title=""></a>
+        <a href="https://githublss.github.io/post/Merge-Sorted-Array/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/pascals-triangle-ii/" title=""></a>
+        <a href="https://githublss.github.io/post/Pascals-Triangle-II/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/pascals-triangle/" title=""></a>
+        <a href="https://githublss.github.io/post/Pascals-Triangle/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/plus-one/" title=""></a>
+        <a href="https://githublss.github.io/post/Plus-One/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/remove-duplicates-from-sorted-array-ii/" title=""></a>
+        <a href="https://githublss.github.io/post/Remove-Duplicates-from-Sorted-Array-II/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/remove-duplicates-from-sorted-array/" title=""></a>
+        <a href="https://githublss.github.io/post/Remove-Duplicates-from-Sorted-Array/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/remove-element/" title=""></a>
+        <a href="https://githublss.github.io/post/Remove-Element/" title=""></a>
     </li>
     
 </ul>
@@ -267,6 +262,21 @@ return [0, 1].</pre></div>
     </section>
 
     
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://mirrors.tuna.tsinghua.edu.cn/" title="清华大学开源软件镜像站">清华大学开源软件镜像站</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="http://mirrors.flysnow.org/" title="常用开发工具CDN镜像">常用开发工具CDN镜像</a>
+        </li>
+        
+    </ul>
+</section>
+
 
     <section class="widget">
         <h3 class="widget-title">其它</h3>
@@ -302,12 +312,12 @@ return [0, 1].</pre></div>
                 }
             };
     </script>
-    <script type="text/javascript" src="https://githublss.github.io/js/prism.js" async="true"></script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 
 <a id="rocket" href="#top"></a>
-<script type="text/javascript" src="https://githublss.github.io/js/totop.js?v=0.0.0" async=""></script>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -321,6 +331,8 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 
 
 

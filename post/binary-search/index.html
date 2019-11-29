@@ -12,18 +12,18 @@
     <meta property="og:type" content="article">
         
         
-    <meta name="Keywords" content="blog,developer,personal">
+    <meta name="Keywords" content="">
     <meta name="description" content="">
         
     <meta name="author" content="">
-    <meta property="og:url" content="https://githublss.github.io/post/binary-search/">
-    <link rel="shortcut icon" href="https://githublss.github.io/favicon.ico" type="image/x-icon">
+    <meta property="og:url" content="https://githublss.github.io/post/Binary-Search/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="https://githublss.github.io/css/normalize.css">
+    <link rel="stylesheet" href="/css/normalize.css">
     
-        <link rel="stylesheet" href="https://githublss.github.io/css/prism.css">
+        <link rel="stylesheet" href="/css/prism.css">
     
-    <link rel="stylesheet" href="https://githublss.github.io/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -43,7 +43,7 @@
                         昨夜星辰的博客
                     </a>
                 
-                
+                <p class="description">C&#43;&#43;、python、数据结构、算法、数据分析</p>
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
@@ -77,6 +77,10 @@
                         </date>
                         
                         
+                        <div class="post-meta">
+                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> 阅读</span></span>
+                        </div>
+                        
                         
                         <div class="post-content">
                             
@@ -88,13 +92,19 @@
 </blockquote>
 
 <p>Example 1:</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Input: nums = [-1,0,3,5,9,12], target = 9
+
+<pre><code>Input: nums = [-1,0,3,5,9,12], target = 9
 Output: 4
-Explanation: 9 exists in nums and its index is 4</pre></div>
+Explanation: 9 exists in nums and its index is 4
+</code></pre>
+
 <p>Example 2:</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Input: nums = [-1,0,3,5,9,12], target = 2
+
+<pre><code>Input: nums = [-1,0,3,5,9,12], target = 2
 Output: -1
-Explanation: 2 does not exist in nums so return -1</pre></div>
+Explanation: 2 does not exist in nums so return -1
+</code></pre>
+
 <p>Note:</p>
 
 <p>You may assume that all elements in nums are unique.
@@ -102,23 +112,25 @@ n will be in the range [1, 10000].
 The value of each element in nums will be in the range [-9999, 9999].<br />
 题意：使用二分查找查找给定的元素<br />
 方法：使用折半查找的方法来查找目标值。</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#fff;font-weight:bold">class</span><span style="color:#f00"> </span>Solution {
-<span style="color:#fff;font-weight:bold">public</span>:
-    <span style="color:#fff;font-weight:bold">int</span> search(vector&lt;<span style="color:#fff;font-weight:bold">int</span>&gt;&amp; nums, <span style="color:#fff;font-weight:bold">int</span> target) {
-        <span style="color:#fff;font-weight:bold">int</span> low = <span style="color:#ff0;font-weight:bold">0</span>,heigh = nums.size()-<span style="color:#ff0;font-weight:bold">1</span>;
-        <span style="color:#fff;font-weight:bold">while</span>(low &lt;= heigh){
-            <span style="color:#fff;font-weight:bold">int</span> mid = (low+heigh)/<span style="color:#ff0;font-weight:bold">2</span>;
-            <span style="color:#fff;font-weight:bold">if</span>(nums[mid] &gt; target)
-                heigh = mid - <span style="color:#ff0;font-weight:bold">1</span>;
-            <span style="color:#fff;font-weight:bold">if</span>(nums[mid] &lt; target)
-                low = mid + <span style="color:#ff0;font-weight:bold">1</span>;
-            <span style="color:#fff;font-weight:bold">if</span>(nums[mid] == target)
-                <span style="color:#fff;font-weight:bold">return</span> mid;
+
+<pre><code class="language-C++">class Solution {
+public:
+    int search(vector&lt;int&gt;&amp; nums, int target) {
+        int low = 0,heigh = nums.size()-1;
+        while(low &lt;= heigh){
+            int mid = (low+heigh)/2;
+            if(nums[mid] &gt; target)
+                heigh = mid - 1;
+            if(nums[mid] &lt; target)
+                low = mid + 1;
+            if(nums[mid] == target)
+                return mid;
         }
-        <span style="color:#fff;font-weight:bold">return</span> -<span style="color:#ff0;font-weight:bold">1</span>;
+        return -1;
     }
 };
-</code></pre></div>
+</code></pre>
+
 <p>参考：<a href="https://www.cnblogs.com/ider/archive/2012/04/01/binary_search.html">二分查找扩展</a><br />
 扩展：二分查找不仅可以用来进行查找目标值，还可以用来1）<strong>查找上届和下届，</strong>2）<strong>找寻区域，</strong>3）<strong>在轮转后有序的数组上使用二分查找</strong>。</p>
 
@@ -128,23 +140,6 @@ The value of each element in nums will be in the range [-9999, 9999].<br />
 
 
                         
-
-<div class="post-archive">
-    <h2>See Also</h2>
-    <ul class="listing">
-        
-        <li><a href="https://githublss.github.io/about/">About</a></li>
-        
-        <li><a href="https://githublss.github.io/post/taday/">Taday</a></li>
-        
-        <li><a href="https://githublss.github.io/post/blog/">Jump Game II</a></li>
-        
-        <li><a href="https://githublss.github.io/post/plus-one/"></a></li>
-        
-        <li><a href="https://githublss.github.io/archives/"></a></li>
-        
-    </ul>
-</div>
 
 
                         <div class="post-meta meta-tags">
@@ -193,35 +188,35 @@ The value of each element in nums will be in the range [-9999, 9999].<br />
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/binary-search/" title=""></a>
+        <a href="https://githublss.github.io/post/Binary-Search/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/merge-sorted-array/" title=""></a>
+        <a href="https://githublss.github.io/post/Merge-Sorted-Array/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/pascals-triangle-ii/" title=""></a>
+        <a href="https://githublss.github.io/post/Pascals-Triangle-II/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/pascals-triangle/" title=""></a>
+        <a href="https://githublss.github.io/post/Pascals-Triangle/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/plus-one/" title=""></a>
+        <a href="https://githublss.github.io/post/Plus-One/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/remove-duplicates-from-sorted-array-ii/" title=""></a>
+        <a href="https://githublss.github.io/post/Remove-Duplicates-from-Sorted-Array-II/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/remove-duplicates-from-sorted-array/" title=""></a>
+        <a href="https://githublss.github.io/post/Remove-Duplicates-from-Sorted-Array/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/remove-element/" title=""></a>
+        <a href="https://githublss.github.io/post/Remove-Element/" title=""></a>
     </li>
     
 </ul>
@@ -244,6 +239,21 @@ The value of each element in nums will be in the range [-9999, 9999].<br />
     </section>
 
     
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://mirrors.tuna.tsinghua.edu.cn/" title="清华大学开源软件镜像站">清华大学开源软件镜像站</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="http://mirrors.flysnow.org/" title="常用开发工具CDN镜像">常用开发工具CDN镜像</a>
+        </li>
+        
+    </ul>
+</section>
+
 
     <section class="widget">
         <h3 class="widget-title">其它</h3>
@@ -279,12 +289,12 @@ The value of each element in nums will be in the range [-9999, 9999].<br />
                 }
             };
     </script>
-    <script type="text/javascript" src="https://githublss.github.io/js/prism.js" async="true"></script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 
 <a id="rocket" href="#top"></a>
-<script type="text/javascript" src="https://githublss.github.io/js/totop.js?v=0.0.0" async=""></script>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -298,6 +308,8 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 
 
 

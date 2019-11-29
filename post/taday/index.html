@@ -16,18 +16,18 @@
         
     <meta property="article:modified_time" content="2019-05-29T21:41:51&#43;08:00">
         
-    <meta name="Keywords" content="blog,developer,personal">
+    <meta name="Keywords" content="">
     <meta name="description" content="Taday">
         
     <meta name="author" content="">
     <meta property="og:url" content="https://githublss.github.io/post/taday/">
-    <link rel="shortcut icon" href="https://githublss.github.io/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="https://githublss.github.io/css/normalize.css">
+    <link rel="stylesheet" href="/css/normalize.css">
     
-        <link rel="stylesheet" href="https://githublss.github.io/css/prism.css">
+        <link rel="stylesheet" href="/css/prism.css">
     
-    <link rel="stylesheet" href="https://githublss.github.io/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -47,7 +47,7 @@
                         昨夜星辰的博客
                     </a>
                 
-                
+                <p class="description">C&#43;&#43;、python、数据结构、算法、数据分析</p>
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
@@ -81,6 +81,10 @@
                         </date>
                         
                         
+                        <div class="post-meta">
+                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> 阅读</span></span>
+                        </div>
+                        
                         
                         <div class="post-content">
                             
@@ -109,45 +113,51 @@ Output: false
 Explanation: You will always arrive at index 3 no matter what. Its maximum
              jump length is 0, which makes it impossible to reach the last index.
 Solution:使用贪心法来进行解决。当到下一步时，让可走的步数减一，同时看下一步的大小是否大于可走步数，如果大于就更新可走步数，否则继续使用前面记录下来的可走步数。</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fff;font-weight:bold">class</span> Solution(<span style="color:#fff;font-weight:bold">object</span>):
-    <span style="color:#fff;font-weight:bold">def</span> canJump(self, nums):
-        <span style="color:#0ff;font-weight:bold">&#34;&#34;&#34;
-</span><span style="color:#0ff;font-weight:bold">        :type nums: List[int]
-</span><span style="color:#0ff;font-weight:bold">        :rtype: bool
-</span><span style="color:#0ff;font-weight:bold">        &#34;&#34;&#34;</span>
-        numsLen = <span style="color:#fff;font-weight:bold">len</span>(nums)
-        i = <span style="color:#ff0;font-weight:bold">0</span>
-        maxJump = <span style="color:#ff0;font-weight:bold">0</span>
+
+<pre><code class="language-python">class Solution(object):
+    def canJump(self, nums):
+        &quot;&quot;&quot;
+        :type nums: List[int]
+        :rtype: bool
+        &quot;&quot;&quot;
+        numsLen = len(nums)
+        i = 0
+        maxJump = 0
         mark = False
-        <span style="color:#fff;font-weight:bold">if</span> numsLen == <span style="color:#ff0;font-weight:bold">1</span>:
-            <span style="color:#fff;font-weight:bold">return</span> True
-        <span style="color:#fff;font-weight:bold">while</span>(i&lt;numsLen):
-            <span style="color:#fff;font-weight:bold">if</span> nums[i] &gt; maxJump:
+        if numsLen == 1:
+            return True
+        while(i&lt;numsLen):
+            if nums[i] &gt; maxJump:
                 maxJump = nums[i]
-            <span style="color:#fff;font-weight:bold">if</span> maxJump == <span style="color:#ff0;font-weight:bold">0</span>:
-                <span style="color:#fff;font-weight:bold">break</span>;
-            <span style="color:#007f7f"># print i,i+maxJump</span>
-            <span style="color:#fff;font-weight:bold">if</span> (i + maxJump) &gt;= numsLen-<span style="color:#ff0;font-weight:bold">1</span>:
+            if maxJump == 0:
+                break;
+            # print i,i+maxJump
+            if (i + maxJump) &gt;= numsLen-1:
                 mark = True
-                <span style="color:#fff;font-weight:bold">break</span>
-            maxJump -= <span style="color:#ff0;font-weight:bold">1</span>
-            i += <span style="color:#ff0;font-weight:bold">1</span>
-        <span style="color:#fff;font-weight:bold">return</span> mark</code></pre></div>
+                break
+            maxJump -= 1
+            i += 1
+        return mark
+</code></pre>
+
 <p>Solution2:仿照这C++版的写了一个Python的另一个办法，通过定义一个可以到达的最远距离reach，最后来判断最远可以到达的距离reach是否等于n。</p>
-<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fff;font-weight:bold">class</span> Solution(<span style="color:#fff;font-weight:bold">object</span>):
-    <span style="color:#fff;font-weight:bold">def</span> canJump(self, nums):
-        <span style="color:#0ff;font-weight:bold">&#34;&#34;&#34;
-</span><span style="color:#0ff;font-weight:bold">        :type nums: List[int]
-</span><span style="color:#0ff;font-weight:bold">        :rtype: bool
-</span><span style="color:#0ff;font-weight:bold">        &#34;&#34;&#34;</span>
-        n = <span style="color:#fff;font-weight:bold">len</span>(nums)
-        reach = <span style="color:#ff0;font-weight:bold">0</span>
-        i = <span style="color:#ff0;font-weight:bold">0</span>
-        <span style="color:#fff;font-weight:bold">while</span> (i&lt;n and i&lt;=reach):
-            reach = <span style="color:#fff;font-weight:bold">max</span>(nums[i]+i, reach)
-            i+=<span style="color:#ff0;font-weight:bold">1</span>
-        <span style="color:#fff;font-weight:bold">return</span> i == n
-            </code></pre></div></blockquote>
+
+<pre><code class="language-python">class Solution(object):
+    def canJump(self, nums):
+        &quot;&quot;&quot;
+        :type nums: List[int]
+        :rtype: bool
+        &quot;&quot;&quot;
+        n = len(nums)
+        reach = 0
+        i = 0
+        while (i&lt;n and i&lt;=reach):
+            reach = max(nums[i]+i, reach)
+            i+=1
+        return i == n
+            
+</code></pre>
+</blockquote>
 
                         </div>
 
@@ -155,23 +165,6 @@ Solution:使用贪心法来进行解决。当到下一步时，让可走的步�
 
 
                         
-
-<div class="post-archive">
-    <h2>See Also</h2>
-    <ul class="listing">
-        
-        <li><a href="https://githublss.github.io/post/blog/">Jump Game II</a></li>
-        
-        <li><a href="https://githublss.github.io/post/binary-search/"></a></li>
-        
-        <li><a href="https://githublss.github.io/post/remove-duplicates-from-sorted-array-ii/"></a></li>
-        
-        <li><a href="https://githublss.github.io/post/plus-one/"></a></li>
-        
-        <li><a href="https://githublss.github.io/archives/"></a></li>
-        
-    </ul>
-</div>
 
 
                         <div class="post-meta meta-tags">
@@ -220,35 +213,35 @@ Solution:使用贪心法来进行解决。当到下一步时，让可走的步�
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/binary-search/" title=""></a>
+        <a href="https://githublss.github.io/post/Binary-Search/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/merge-sorted-array/" title=""></a>
+        <a href="https://githublss.github.io/post/Merge-Sorted-Array/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/pascals-triangle-ii/" title=""></a>
+        <a href="https://githublss.github.io/post/Pascals-Triangle-II/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/pascals-triangle/" title=""></a>
+        <a href="https://githublss.github.io/post/Pascals-Triangle/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/plus-one/" title=""></a>
+        <a href="https://githublss.github.io/post/Plus-One/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/remove-duplicates-from-sorted-array-ii/" title=""></a>
+        <a href="https://githublss.github.io/post/Remove-Duplicates-from-Sorted-Array-II/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/remove-duplicates-from-sorted-array/" title=""></a>
+        <a href="https://githublss.github.io/post/Remove-Duplicates-from-Sorted-Array/" title=""></a>
     </li>
     
     <li>
-        <a href="https://githublss.github.io/post/remove-element/" title=""></a>
+        <a href="https://githublss.github.io/post/Remove-Element/" title=""></a>
     </li>
     
 </ul>
@@ -271,6 +264,21 @@ Solution:使用贪心法来进行解决。当到下一步时，让可走的步�
     </section>
 
     
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://mirrors.tuna.tsinghua.edu.cn/" title="清华大学开源软件镜像站">清华大学开源软件镜像站</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="http://mirrors.flysnow.org/" title="常用开发工具CDN镜像">常用开发工具CDN镜像</a>
+        </li>
+        
+    </ul>
+</section>
+
 
     <section class="widget">
         <h3 class="widget-title">其它</h3>
@@ -306,12 +314,12 @@ Solution:使用贪心法来进行解决。当到下一步时，让可走的步�
                 }
             };
     </script>
-    <script type="text/javascript" src="https://githublss.github.io/js/prism.js" async="true"></script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 
 <a id="rocket" href="#top"></a>
-<script type="text/javascript" src="https://githublss.github.io/js/totop.js?v=0.0.0" async=""></script>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -325,6 +333,8 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
 
 
 

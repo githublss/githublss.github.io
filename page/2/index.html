@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.55.6" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>昨夜星辰的博客 | C&#43;&#43;、python、数据结构、算法、数据分析</title>
+    <meta property="og:title" content="昨夜星辰的博客 | C&#43;&#43;、python、数据结构、算法、数据分析">
+    <meta property="og:type" content="website">
+    <meta name="Keywords" content="">
+    <meta name="description" content="">
+    <meta property="og:url" content="https://githublss.github.io/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="alternate" type="application/rss+xml+xml" href="https://githublss.github.io/index.xml" title="昨夜星辰的博客" />
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <h1>
+                        <a id="logo" href="https://githublss.github.io">
+                            昨夜星辰的博客
+                        </a>
+                    </h1>
+                
+                <p class="description">C&#43;&#43;、python、数据结构、算法、数据分析</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://githublss.github.io">首页</a>
+                    
+                    <a  href="https://githublss.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://githublss.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    
+		    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://githublss.github.io/post/Remove-Duplicates-from-Sorted-Array/" title="" ></a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                1年1月1日
+                            </date>
+                            
+                            <div class="post-content">
+                                Remove Duplicates from Sorted Array  Given a sorted array nums, remove the duplicates in-place such that each element appear only once and return the new length. Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
+Example 1: Given nums = [1,1,2], Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively.……
+                            </div>
+                            <p class="readmore"><a href="https://githublss.github.io/post/Remove-Duplicates-from-Sorted-Array/">阅读全文</a></p>
+                        </article>
+                    
+                    
+		    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://githublss.github.io/post/Remove-Element/" title="" ></a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                1年1月1日
+                            </date>
+                            
+                            <div class="post-content">
+                                Remove Element  Given an array nums and a value val, remove all instances of that value in-place and return the new length. Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory. The order of elements can be changed. It doesn&rsquo;t matter what you leave beyond the new length.
+Example 1: Given nums = [3,2,2,3], val = 3, Your function should return length = 2, with the first two elements of nums being 2.……
+                            </div>
+                            <p class="readmore"><a href="https://githublss.github.io/post/Remove-Element/">阅读全文</a></p>
+                        </article>
+                    
+                    
+		    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://githublss.github.io/post/Sort-an-Array/" title="" ></a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                1年1月1日
+                            </date>
+                            
+                            <div class="post-content">
+                                Sort an Array Given an array of integers nums, sort the array in ascending order.
+Example 1: Input: nums = [5,2,3,1] Output: [1,2,3,5] Example 2: Input: nums = [5,1,1,2,0,0] Output: [0,0,1,1,2,5]  题意：此题可以使用多种排序算法进行解答，算是数据结构中的基础题目。 方法：分别尝试使用简单选择排序、直接插入排序、快速排序方法来解决,但是由于简单选择排序和直接插入排序的时间复杂度比较高，没有通过所有的测试用例。
+class Solution { public: vector&lt;int&gt; sortArray(vector&lt;int&gt;&amp; nums) { // selectSort(nums); // insertSort(nums); // quickSort(nums,0,nums.size()-1); // bubbleSort(nums); // heapSort(nums); mergeSort(nums); return nums; } // 简单选择排序 void selectSort(vector&lt;int&gt;&amp; nums){ // 1.使用选择排序,由于时间复杂度为N方，测试用例通过率为9/10. int i,j; int selected,temp; for(i=0;i&lt;nums.size()-1;i++){ selected = nums[i]; for(j=i;j&lt;nums.……
+                            </div>
+                            <p class="readmore"><a href="https://githublss.github.io/post/Sort-an-Array/">阅读全文</a></p>
+                        </article>
+                    
+                    
+		    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://githublss.github.io/post/Two-Sum/" title="" ></a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                1年1月1日
+                            </date>
+                            
+                            <div class="post-content">
+                                Two Sum  Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+ Example: Given nums = [2, 7, 11, 15], target = 9, Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1].  solution: 自己首先想到的是暴力法，参考人家的，人家是遍历一次的过程中建立一个字典，提高了查询速度……
+                            </div>
+                            <p class="readmore"><a href="https://githublss.github.io/post/Two-Sum/">阅读全文</a></p>
+                        </article>
+                    
+                    
+                    
+
+
+
+<ol class="page-navigator">
+    
+    <li class="prev">
+        <a href="https://githublss.github.io/">上一页</a>
+    </li>
+    
+
+    
+    <li >
+        <a href="https://githublss.github.io/">1</a>
+    </li>
+    
+    <li  class="current">
+        <a href="https://githublss.github.io/page/2/">2</a>
+    </li>
+    
+
+    
+</ol>
+
+
+
+                </div>
+            </div>
+
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://githublss.github.io">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://githublss.github.io/post/taday/" title="Taday">Taday</a>
+    </li>
+    
+    <li>
+        <a href="https://githublss.github.io/post/blog/" title="Jump Game II">Jump Game II</a>
+    </li>
+    
+    <li>
+        <a href="https://githublss.github.io/post/Binary-Search/" title=""></a>
+    </li>
+    
+    <li>
+        <a href="https://githublss.github.io/post/Merge-Sorted-Array/" title=""></a>
+    </li>
+    
+    <li>
+        <a href="https://githublss.github.io/post/Pascals-Triangle-II/" title=""></a>
+    </li>
+    
+    <li>
+        <a href="https://githublss.github.io/post/Pascals-Triangle/" title=""></a>
+    </li>
+    
+    <li>
+        <a href="https://githublss.github.io/post/Plus-One/" title=""></a>
+    </li>
+    
+    <li>
+        <a href="https://githublss.github.io/post/Remove-Duplicates-from-Sorted-Array-II/" title=""></a>
+    </li>
+    
+    <li>
+        <a href="https://githublss.github.io/post/Remove-Duplicates-from-Sorted-Array/" title=""></a>
+    </li>
+    
+    <li>
+        <a href="https://githublss.github.io/post/Remove-Element/" title=""></a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://mirrors.tuna.tsinghua.edu.cn/" title="清华大学开源软件镜像站">清华大学开源软件镜像站</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="http://mirrors.flysnow.org/" title="常用开发工具CDN镜像">常用开发工具CDN镜像</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://githublss.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://githublss.github.io">昨夜星辰的博客 By </a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'GA ID', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+
+</body>
+</html>
