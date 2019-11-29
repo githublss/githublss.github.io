@@ -7,23 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title> | 昨夜星辰的博客</title>
-    <meta property="og:title" content=" - 昨夜星辰的博客">
+    <title>算法 | 昨夜星辰的博客</title>
+    <meta property="og:title" content="算法 - 昨夜星辰的博客">
     <meta property="og:type" content="article">
         
         
     <meta name="Keywords" content="">
-    <meta name="description" content="">
+    <meta name="description" content="算法">
         
     <meta name="author" content="">
-    <meta property="og:url" content="https://githublss.github.io/post/Remove-Element/">
+    <meta property="og:url" content="https://githublss.github.io/categories/%E7%AE%97%E6%B3%95/">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="/css/normalize.css">
     
-        <link rel="stylesheet" href="/css/prism.css">
-    
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="alternate" type="application/rss+xml+xml" href="https://githublss.github.io/categories/%E7%AE%97%E6%B3%95/index.xml" title="昨夜星辰的博客" />
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -32,6 +31,7 @@
     
     
 </head>
+
 
 <body>
 <header id="header" class="clearfix">
@@ -47,7 +47,7 @@
             </div>
             <div>
                 <nav id="nav-menu" class="clearfix">
-                    <a class="current" href="https://githublss.github.io">首页</a>
+                    <a class="" href="https://githublss.github.io">首页</a>
                     
                     <a  href="https://githublss.github.io/archives/" title="归档">归档</a>
                     
@@ -61,104 +61,54 @@
 
 
 <div id="body">
-        
-        
     <div class="container">
         <div class="col-group">
 
             <div class="col-8" id="main">
                 <div class="res-cons">
-                    <article class="post">
-                        <header>
-                            <h1 class="post-title"></h1>
-                        </header>
-                        <date class="post-meta meta-date">
-                            1年1月1日
-                        </date>
-                        
-                        
-                        <div class="post-meta">
-                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> 阅读</span></span>
-                        </div>
-                        
-                        
-                        <div class="post-content">
-                            
-
-<h1 id="remove-element">Remove Element</h1>
-
-<blockquote>
-<p>Given an array nums and a value val, remove all instances of that value in-place and return the new length.
-Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
-The order of elements can be changed. It doesn&rsquo;t matter what you leave beyond the new length.</p>
-
-<pre><code>Example 1:
-
-Given nums = [3,2,2,3], val = 3,
-
-Your function should return length = 2, with the first two elements of nums being 2.
-
-It doesn't matter what you leave beyond the returned length.
-Example 2:
-
-Given nums = [0,1,2,2,3,0,4,2], val = 2,
-
-Your function should return length = 5, with the first five elements of nums containing 0, 1, 3, 0, and 4.
-
-Note that the order of those five elements can be arbitrary.
-
-It doesn't matter what values are set beyond the returned length.
-</code></pre>
-</blockquote>
-
-<p>题意：移除原数组的指定的val值，并且不新建新的数组。数组是以引用传参过来的，对数组的修改会改变原数组。<br />
-方法：用一个哨兵来在后面铺路，一个哨兵在前面挖雷，挖到雷就丢掉，挖到了砖头就丢给后面的哨兵铺路。</p>
-
-<pre><code class="language-C++">class Solution {
-public:
-    int removeElement(vector&lt;int&gt;&amp; nums, int val) {
-        int j = 0;  // 负责铺路的哨兵j
-        for(int i = 0;i &lt; nums.size();i++){ // 哨兵i负责在前面冲锋陷阵
-            if (nums[i] != val){
-                nums[j++] = nums[i];
-            }
-        }
-        return j;
-    }
-};
-</code></pre>
-
-                        </div>
-
-                        
-
-
-                        
-
-
-                        <div class="post-meta meta-tags">
-                            
-                            没有标签
-                            
-                        </div>
-                    </article>
                     
-    
+                    <h3 class="archive-title">
+                        分类
+                        <span class="keyword">算法</span>
+                        中的文章
+                    </h3>
+                    
 
-    
-    
-    <div class="post bg-white">
-      <script src="https://utteranc.es/client.js"
-            repo= "githublss/hugo-blogs-utterances"
-            issue-term="pathname"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
-      </script>
-    </div>
-    
+                    
+                        <article class="post">
+                            <header>
+                                <h1 class="post-title">
+                                    <a href="https://githublss.github.io/post/Plus-One/">以数组存储的整数加一</a>
+                                </h1>
+                            </header>
+                            <date class="post-meta meta-date">
+                                2019年5月29日
+                            </date>
+                            
+                            <div class="post-meta meta-category">
+                                |
+                                
+                                    <a href="https://githublss.github.io/categories/%E7%AE%97%E6%B3%95">算法</a>
+                                
+                            </div>
+                            
+                            <div class="post-content">
+                                Plus One  Given a non-empty array of digits representing a non-negative integer, plus one to the integer. The digits are stored such that the most significant digit is at the head of the list, and each element in the array contain a single digit. You may assume the integer does not contain any leading zero, except the number 0 itself.
+Example 1: Input: [1,2,3] Output: [1,2,4] Explanation: The array represents the integer 123.……
+                                <p class="readmore"><a href="https://githublss.github.io/post/Plus-One/">阅读全文</a></p>
+                            </div>
+                        </article>
+                    
+
+                    
+
+
+
+
+
                 </div>
             </div>
+
             <div id="secondary">
     <section class="widget">
         <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
@@ -281,23 +231,6 @@ public:
 </footer>
 
 
-    
-    <script type="text/javascript">
-        
-        (function () {
-            $("pre code").parent().addClass("line-numbers")
-        }());
-
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [['$', '$']],
-                processEscapes: true
-                }
-            };
-    </script>
-    <script type="text/javascript" src="/js/prism.js" async="true"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
@@ -316,6 +249,7 @@ if (!doNotTrack) {
 
 
     <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
 
 
 

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>leetcode on 昨夜星辰的博客</title>
+    <link>https://githublss.github.io/tags/leetcode/</link>
+    <description>Recent content in leetcode on 昨夜星辰的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>&amp;copy; 2016. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 29 May 2019 21:41:51 +0800</lastBuildDate>
+    
+	<atom:link href="https://githublss.github.io/tags/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>以数组存储的整数加一</title>
+      <link>https://githublss.github.io/post/Plus-One/</link>
+      <pubDate>Wed, 29 May 2019 21:41:51 +0800</pubDate>
+      
+      <guid>https://githublss.github.io/post/Plus-One/</guid>
+      <description>Plus One  Given a non-empty array of digits representing a non-negative integer, plus one to the integer. The digits are stored such that the most significant digit is at the head of the list, and each element in the array contain a single digit. You may assume the integer does not contain any leading zero, except the number 0 itself.
+Example 1: Input: [1,2,3] Output: [1,2,4] Explanation: The array represents the integer 123.</description>
+    </item>
+    
+  </channel>
+</rss>
